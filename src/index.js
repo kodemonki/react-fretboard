@@ -1,10 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import Layout from "./js/components/Layout";
+
 import './styles/appStyles.scss';
 
-const Index = () => {
-  return <div><h1>Hello React!</h1></div>;
-};
-
-ReactDOM.render(<Index />, document.getElementById("index"));
+ReactDOM.render(<Layout />, document.getElementById("Layout"));
