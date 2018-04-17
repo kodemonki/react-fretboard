@@ -8,3 +8,11 @@ body {
       color: $themeColor-Dark
   }
 }
+
+.fret {
+  display: inline-block;
+  border: 1px grey solid;
+  min-width: 50px;
+  min-height: 25px;
+  text-align: center;
+}
