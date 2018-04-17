@@ -1,11 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
-const title = 'My Minimal React Webpack Babel Setup';
+const Index = () => {
+  return <div>Hello React!</div>;
+};
 
-ReactDOM.render(
-  <div>{title}</div>,
-  document.getElementById('app')
-);
-
-module.hot.accept();
+ReactDOM.render(<Index />, document.getElementById("index"));
