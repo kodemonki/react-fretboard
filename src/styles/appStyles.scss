@@ -11,21 +11,27 @@ body {
 
 .fret {
   display: inline-block;
-  border: 1px grey solid;
-  min-width: 2.5%;
-  min-height: 25px;
+  border-bottom: 1px grey solid;
+  width: 4%;
   text-align: center;
-  padding:5px;
+  padding:4px 0px;
   text-transform: uppercase;
 
 }
+
 .fret-label {
   display: inline-block;
-  border: 1px white solid;
-  min-width: 2.5%;
-  min-height: 25px;
+  border-bottom: 1px grey solid;
+  width: 4%;
   text-align: center;
-  padding:5px;
+  padding:4px 0px;
   text-transform: uppercase;
 
+}
+
+.options {
+  padding-bottom: 20px;
+}
+.navigation {
+  padding-bottom: 20px;
 }

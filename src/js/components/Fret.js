@@ -9,6 +9,10 @@ export default class Fret extends React.Component {
     super(props);
   }
   getNote(num){
+    const octave = 12;
+    while(num >= octave){
+      num -= octave;
+    }
     const valueArray=['a','a#','b','c','c#','d','d#','e','f','f#','g','g#'];
     return valueArray[num];
   }

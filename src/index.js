@@ -5,4 +5,4 @@ import Layout from "./js/components/Layout";
 
 import './styles/appStyles.scss';
 
-ReactDOM.render(<Layout />, document.getElementById("Layout"));
+ReactDOM.render( <Layout/>, document.getElementById("Layout"));
