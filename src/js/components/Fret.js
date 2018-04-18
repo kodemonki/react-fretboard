@@ -13,9 +13,6 @@ export default class Fret extends React.Component {
     return valueArray[num];
   }
   render() {
-
-    return <div className="fret">
-             {this.getNote(this.props.note)}
-           </div>;
+    return <div className="fret">{this.getNote(this.props.note)}</div>;
   }
 }
