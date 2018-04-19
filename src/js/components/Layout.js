@@ -52,6 +52,8 @@ export default class Layout extends React.Component {
     if(newState.options.scale === '0'){
       highlight = [0,2,4,5,7,9,11];
     }else if(newState.options.scale === '1'){
+      highlight = [0,2,3,5,7,8,11];
+    }else if(newState.options.scale === '2'){
       highlight = [0,3,5,6,7,10];
     }
     return highlight;
