@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import Navigation from "./Navigation";
 import ScaleOptions from "./ScaleOptions";
@@ -64,21 +64,32 @@ export default class Layout extends React.Component {
     newState.options = newOptions;
     newState.highlight = this.buildHighlights(newState);
     this.setState(newState);
-  }
 
+  }
+/*
+<Route path='/' render={() => ()}/>
+<Route path='/scale' render={() => (
+  <ScaleOptions changeOptions={this.changeOptions.bind(this)} root={this.state.options.root} scale={this.state.options.scale} mode={this.state.options.mode}/>
+)}/>
+<Route path='/chord' render={() => (
+  <ChordOptions changeOptions={this.changeOptions.bind(this)} root={this.state.options.root} scale={this.state.options.scale} mode={this.state.options.mode}/>
+)}/>
+*/
   render() {
-    return <Router>
+    return <Router basename="/react/fretboard">
       <div className="Layout">
-        {/*<Navigation/>*/}
-        <Route exact path='/' render={() => (
+        {/*
+        <Route exact path='/' component={Navigation}/>
+
+        <Route path='/scale' render={() => (
           <ScaleOptions changeOptions={this.changeOptions.bind(this)} root={this.state.options.root} scale={this.state.options.scale} mode={this.state.options.mode}/>
         )}/>
-        <Route exact path='/scale' render={() => (
-          <ScaleOptions changeOptions={this.changeOptions.bind(this)} root={this.state.options.root} scale={this.state.options.scale} mode={this.state.options.mode}/>
-        )}/>
-        <Route exact path='/chord' render={() => (
+        <Route path='/chord' render={() => (
           <ChordOptions changeOptions={this.changeOptions.bind(this)} root={this.state.options.root} scale={this.state.options.scale} mode={this.state.options.mode}/>
         )}/>
+        */}
+
+        <ScaleOptions changeOptions={this.changeOptions.bind(this)} root={this.state.options.root} scale={this.state.options.scale} mode={this.state.options.mode}/>
 
         <FretLabels guitar={this.state.guitar}/>
         <FretBoard fretboard={this.state.fretboard} options={this.state.options} highlight={this.state.highlight} />

@@ -1,12 +1,9 @@
 @import 'themeColors';
-$theme-font: "Times New Roman", Times, serif;
+$theme-font: "Verdana", Times, serif;
 
 body {
   font-family: $theme-font;
-  background-color: $themeColor-Grey;
-  h1, h2 {
-      color: $themeColor-Dark
-  }
+  color: $themeColor-Dark
 }
 
 .fret {
@@ -18,13 +15,13 @@ body {
   text-transform: uppercase;
 }
 .lowlight{
-  background-color:white;
+  background-color:$fretboard-background;
 }
 .highlight{
-  background-color:lightgray;
+  background-color:$fretboard-highlight;
 }
 .root{
-  background-color:gray;
+  background-color:$fretboard-root;
 }
 
 .fret-label {
@@ -37,7 +34,7 @@ body {
 }
 
 .options {
-  background-color: $themeColor-Grey;
+  padding:5px;
 }
 
 .options select{
@@ -45,12 +42,11 @@ body {
 }
 
 .navigation {
-  padding-bottom: 20px;
-  background-color: $themeColor-Grey;
+
 }
 
 .fretboard {
-  background-color: $fretboad-background;
+  background-color: $fretboard-background;
   border-left: 2px grey solid;
   border-right: 2px grey solid;
 }
