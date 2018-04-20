@@ -18,12 +18,15 @@ body {
   padding:4px 0px;
   text-transform: uppercase;
 }
+
 .lowlight{
   background-color:$fretboard-background;
 }
+
 .highlight{
   background-color:$fretboard-highlight;
 }
+
 .root{
   background-color:$fretboard-root;
 }

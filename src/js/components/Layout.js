@@ -6,6 +6,7 @@ import ScaleOptions from "./ScaleOptions";
 import ChordOptions from "./ChordOptions";
 import FretLabels from "./FretLabels";
 import FretBoard from "./FretBoard";
+import Chords from "./Chords";
 
 export default class Layout extends React.Component {
 
@@ -78,6 +79,7 @@ export default class Layout extends React.Component {
   render() {
     return <Router basename="/react/fretboard">
       <div className="Layout">
+        <h1>Guitar Fretboard Mapper</h1>
         {/*
         <Route exact path='/' component={Navigation}/>
 
@@ -93,6 +95,7 @@ export default class Layout extends React.Component {
 
         <FretLabels guitar={this.state.guitar}/>
         <FretBoard fretboard={this.state.fretboard} options={this.state.options} highlight={this.state.highlight} />
+        <Chords options={this.state.options} highlight={this.state.highlight}/>
       </div>
     </Router>;
   }
