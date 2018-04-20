@@ -6,6 +6,10 @@ body {
   color: $themeColor-Dark
 }
 
+.Layout {
+  min-width: 640px;
+}
+
 .fret {
   display: inline-block;
   border-bottom: 2px grey solid;
