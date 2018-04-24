@@ -21,8 +21,8 @@ export default class Chords extends React.Component {
       'Major seventh',
       'Minor seventh',
       'Minor seventh',
-      'Dominant seventh',
       'Major seventh',
+      'Dominant seventh',
       'Minor seventh',
       'Minor seventh flat five',
     ];
