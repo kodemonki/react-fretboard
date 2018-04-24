@@ -12,7 +12,6 @@ export default class ChordOptions extends React.Component {
 
   getKeyList() {
     const keys = ['a','a#','b','c','c#','d','d#','e','f','f#','g','g#'];
-
     const keyList = keys.map((key,i) => {
       return (<option key={i} value={i}>{key}</option>);
     });

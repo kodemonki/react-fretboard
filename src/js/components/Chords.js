@@ -1,9 +1,6 @@
 import React from "react";
 
 export default class Chords extends React.Component {
-  constructor(props){
-    super(props);
-  }
   getNote(num){
     const valueArray=['a','a#','b','c','c#','d','d#','e','f','f#','g','g#'];
     const octave = 12;
@@ -33,8 +30,7 @@ export default class Chords extends React.Component {
   }
   render() {
     return <div className="Chords">
-    <h4>Chords</h4>
-    {this.props.options.scale !== '2' && <ul>{this.getChords()}</ul>}
+    {this.props.options.scale !== '2' && <div><h4>Chords</h4><ul>{this.getChords()}</ul></div>}
     </div>;
   }
 }
