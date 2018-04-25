@@ -16,7 +16,7 @@ export default class Layout extends React.Component {
   buildState() {
     var newState = {
       guitar: {
-        tuning:[7+12,2+12,10+12,5,0,7],
+        tuning:[],
         semitones:25,
         octave:12
       },
@@ -29,6 +29,7 @@ export default class Layout extends React.Component {
         mode: '0'
       }
     }
+    newState.guitar.tuning = this.buildTuning(newState);
     newState.fretboard = this.buildFretboard(newState);
     newState.highlight = this.buildHighlights(newState);
     return newState;
@@ -68,7 +69,7 @@ export default class Layout extends React.Component {
     }else if(newState.options.tuning === '2'){
       tuningArr = [7+12,2+12,10+12,5,0,7,2];
     }else if(newState.options.tuning === '3'){
-      tuningArr = [5,0,7,2];
+      tuningArr = [10+12,5,0,7];
     }
     return tuningArr;
   }
