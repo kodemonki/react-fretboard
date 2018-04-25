@@ -56,9 +56,9 @@ export default class ScaleOptions extends React.Component {
   }
 
   getTuningList() {
-    const modes = ['Standard','Drop D','7String', 'Bass'];
-    const keyList = modes.map((mode,i) => {
-      return (<option key={i} value={i}>{mode}</option>);
+    const tunings = ['Standard', 'Open G', 'Open E', 'Open D', '7String', 'Bass'];
+    const keyList = tunings.map((tuning,i) => {
+      return (<option key={i} value={i}>{tuning}</option>);
     });
     return keyList;
   }

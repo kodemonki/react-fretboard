@@ -61,16 +61,34 @@ export default class Layout extends React.Component {
   }
 
   buildTuning(newState){
+    const A = 0;
+    const ASharp = 1;
+    const B = 2;
+    const C = 3;
+    const CSharp = 4;
+    const D = 5;
+    const DSharp = 6;
+    const E = 7;
+    const F = 8;
+    const FSharp = 9;
+    const G = 10;
+    const GSharp = 11;
     var tuningArr = [];
+    
     if(newState.options.tuning === '0'){
-      tuningArr = [7+12,2+12,10+12,5,0,7];
+      tuningArr = [E,A,D,G,B,E];
     }else if(newState.options.tuning === '1'){
-      tuningArr = [7+12,2+12,10+12,5,0,5];
+      tuningArr = [D,G,D,G,B,D];
     }else if(newState.options.tuning === '2'){
-      tuningArr = [7+12,2+12,10+12,5,0,7,2];
+      tuningArr = [E,B,E,GSharp,B,E];
     }else if(newState.options.tuning === '3'){
-      tuningArr = [10+12,5,0,7];
+      tuningArr = [B,E,A,D,G,B,E];
+    }else if(newState.options.tuning === '4'){
+      tuningArr = [B, E,A,D,G,B,E];
+    }else if(newState.options.tuning === '5'){
+      tuningArr = [E,A,D,G];
     }
+    tuningArr.reverse();
     return tuningArr;
   }
 
