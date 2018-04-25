@@ -86,7 +86,7 @@ export default class Layout extends React.Component {
   render() {
     return <Router basename="/react/fretboard">
       <div className="Layout">
-        <h1>Fretboard Mapper</h1>
+        <h1>Fretboard</h1>
         <ScaleOptions changeOptions={this.changeOptions.bind(this)} tuning={this.state.options.tuning} root={this.state.options.root} scale={this.state.options.scale} mode={this.state.options.mode}/>
         <FretLabels guitar={this.state.guitar}/>
         <FretBoard fretboard={this.state.fretboard} options={this.state.options} highlight={this.state.highlight} />
