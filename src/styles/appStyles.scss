@@ -59,7 +59,9 @@ body {
 .options select{
   margin:10px;
 }
-
+.options label{
+  font-weight: bold;
+}
 .fretboard {
   background-color: $fretboard-background;
   border-left: 2px grey solid;

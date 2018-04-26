@@ -8,7 +8,7 @@ export default class String extends React.Component {
     this.state = this.props;
   }
   isRoot(note){
-    if((note % 12) == this.props.root){
+    if((note % 12) == ((Number(this.props.root)+Number(this.props.highlight[Number(this.props.mode)])) % 12)){
       return true;
     }else{
       return false;

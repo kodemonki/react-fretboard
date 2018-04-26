@@ -73,8 +73,8 @@ export default class Layout extends React.Component {
     const FSharp = 9;
     const G = 10;
     const GSharp = 11;
+
     var tuningArr = [];
-    
     if(newState.options.tuning === '0'){
       tuningArr = [E,A,D,G,B,E];
     }else if(newState.options.tuning === '1'){
@@ -82,9 +82,9 @@ export default class Layout extends React.Component {
     }else if(newState.options.tuning === '2'){
       tuningArr = [E,B,E,GSharp,B,E];
     }else if(newState.options.tuning === '3'){
-      tuningArr = [B,E,A,D,G,B,E];
+      tuningArr = [D,A,D,FSharp,A,D];
     }else if(newState.options.tuning === '4'){
-      tuningArr = [B, E,A,D,G,B,E];
+      tuningArr = [B,E,A,D,G,B,E];
     }else if(newState.options.tuning === '5'){
       tuningArr = [E,A,D,G];
     }
@@ -93,6 +93,7 @@ export default class Layout extends React.Component {
   }
 
   changeOptions(newOptions){
+    console.log(newOptions);
     var newState = Object.assign( {}, this.state);
     newState.options = newOptions;
     newState.guitar.tuning = this.buildTuning(newState);
@@ -104,7 +105,6 @@ export default class Layout extends React.Component {
   render() {
     return <Router basename="/react/fretboard">
       <div className="Layout">
-        <h1>Fretboard</h1>
         <ScaleOptions changeOptions={this.changeOptions.bind(this)} tuning={this.state.options.tuning} root={this.state.options.root} scale={this.state.options.scale} mode={this.state.options.mode}/>
         <FretLabels guitar={this.state.guitar}/>
         <FretBoard fretboard={this.state.fretboard} options={this.state.options} highlight={this.state.highlight} />

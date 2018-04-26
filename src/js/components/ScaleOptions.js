@@ -75,6 +75,9 @@ export default class ScaleOptions extends React.Component {
         <label>
           Scale:<select value={this.state.scale} onChange={this.handleScaleChange.bind(this)}>{this.getScaleList()}</select>
         </label>
+        <label>
+          Mode:<select value={this.state.mode} onChange={this.handleModeChange.bind(this)}>{this.getModeList()}</select>
+        </label>
       </form>
     </div>;
   }
