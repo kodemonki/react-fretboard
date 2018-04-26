@@ -59,14 +59,23 @@ body {
 .options select{
   margin:10px;
 }
+
 .options label{
   font-weight: bold;
+  margin-left:10px;
 }
+
 .fretboard {
   background-color: $fretboard-background;
   border-left: 2px grey solid;
   border-right: 2px grey solid;
 }
+
 .Chords{
   font-size: 0.9rem;
+  margin-left:10px;
+  & h4{
+    margin:0;
+    margin-top:10px;
+  }
 }
