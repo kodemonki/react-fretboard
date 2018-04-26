@@ -93,7 +93,6 @@ export default class Layout extends React.Component {
   }
 
   changeOptions(newOptions){
-    console.log(newOptions);
     var newState = Object.assign( {}, this.state);
     newState.options = newOptions;
     newState.guitar.tuning = this.buildTuning(newState);
