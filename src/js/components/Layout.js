@@ -87,6 +87,8 @@ export default class Layout extends React.Component {
       tuningArr = [B,E,A,D,G,B,E];
     }else if(newState.options.tuning === '5'){
       tuningArr = [E,A,D,G];
+    }else if(newState.options.tuning === '6'){
+      tuningArr = [B,E,A,D,G];
     }
     tuningArr.reverse();
     return tuningArr;
