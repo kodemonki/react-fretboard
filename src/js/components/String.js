@@ -8,19 +8,19 @@ export default class String extends React.Component {
     this.state = this.props;
   }
   isRoot(note){
-    if((note % 12) == this.props.root){
+    if((note % 12) == ((Number(this.props.root)+Number(this.props.highlight[Number(this.props.mode)])) % 12)){
       return true;
     }else{
       return false;
     }
   }
   isHighlight(note){
-    var found = false;
+    var found = -1;
     for (var highlight in this.props.highlight) {
       const number1 = (this.props.highlight[highlight]+Number(this.props.root)) % 12;
       const number2 = note % 12;
       if(number1 === number2){
-        found = true;
+        found = Number(highlight);
         break;
       }
     }
@@ -30,8 +30,9 @@ export default class String extends React.Component {
     return <div>
       {this.props.noteArray.map((note, index) => {
         var highlightClassName = 'lowlight';
-        if(this.isHighlight(note)){
-          highlightClassName = 'highlight';
+        var num = this.isHighlight(note);
+        if( num > -1){
+          highlightClassName = 'highlight highlight'+num;
         }
         if(this.isRoot(note)){
           highlightClassName = 'root';

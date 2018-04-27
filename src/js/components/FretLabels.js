@@ -10,7 +10,7 @@ export default class FretLabels extends React.Component {
     return frets;
   }
   render() {
-    return <div>
+    return <div className="FretLabels">
              {this.getLabels(this.props.guitar.semitones)}
            </div>;
   }

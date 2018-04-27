@@ -3,7 +3,7 @@ import React from "react";
 export default class ScaleOptions extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {root: this.props.root, scale:this.props.scale, mode:this.props.mode};
+    this.state = {tuning:this.props.tuning, root: this.props.root, scale:this.props.scale, mode:this.props.mode};
   }
 
   handleRootChange(event) {
@@ -18,6 +18,11 @@ export default class ScaleOptions extends React.Component {
 
   handleModeChange(event) {
     const newOptions = Object.assign(this.state, { mode: event.target.value });
+    this.props.changeOptions(newOptions);
+  }
+
+  handleTuningChange(event) {
+    const newOptions = Object.assign(this.state, { tuning: event.target.value });
     this.props.changeOptions(newOptions);
   }
 
@@ -50,14 +55,28 @@ export default class ScaleOptions extends React.Component {
     return keyList;
   }
 
+  getTuningList() {
+    const tunings = ['Standard', 'Open G', 'Open E', 'Open D', '7String', 'Bass'];
+    const keyList = tunings.map((tuning,i) => {
+      return (<option key={i} value={i}>{tuning}</option>);
+    });
+    return keyList;
+  }
+
   render() {
     return <div className="options">
       <form onSubmit={this.handleSubmit.bind(this)}>
+        <label>
+          Tuning:<select value={this.state.tuning} onChange={this.handleTuningChange.bind(this)}>{this.getTuningList()}</select>
+        </label>
         <label>
           Root:<select value={this.state.root} onChange={this.handleRootChange.bind(this)}>{this.getRootList()}</select>
         </label>
         <label>
           Scale:<select value={this.state.scale} onChange={this.handleScaleChange.bind(this)}>{this.getScaleList()}</select>
+        </label>
+        <label>
+          Mode:<select value={this.state.mode} onChange={this.handleModeChange.bind(this)}>{this.getModeList()}</select>
         </label>
       </form>
     </div>;
