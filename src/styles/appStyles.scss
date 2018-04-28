@@ -55,7 +55,9 @@ body {
 
 }
 .options {
+  font-weight: bold;
   padding-right:5px;
+  font-size: 0.8rem;
 }
 
 .options select{
@@ -63,7 +65,6 @@ body {
 }
 
 .options label{
-  font-weight: bold;
   margin-left:10px;
 }
 
@@ -74,8 +75,9 @@ body {
 }
 
 .Chords{
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   margin-left:10px;
+  margin-top:10px;
   & h4{
     margin:0;
     margin-top:10px;

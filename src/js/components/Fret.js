@@ -11,6 +11,7 @@ export default class Fret extends React.Component {
     return valueArray[num];
   }
   render() {
+    console.log(this.props);
     return <div className={"fret "+this.props.highlightClassName}>{this.getNote(this.props.note)}</div>;
   }
 }

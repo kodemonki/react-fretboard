@@ -24,13 +24,23 @@ export default class Chords extends React.Component {
       'Minor seventh flat five',
     ];
     for (var i = 0; i < highlight.length; i++) {
-      chords.push(<li key={i} >{this.getNote(highlight[i]+Number(this.props.options.root)).toUpperCase()+' '+suffix[i]}</li>);
+      chords.push(<div key={i} >{this.getNote(highlight[i]+Number(this.props.options.root)).toUpperCase()+' '+suffix[i]}</div>);
     }
     return chords;
   }
+  getScaleNotes(){
+    const highlight = this.props.highlight;
+    var scaleNotes = [];
+    for (var i = 0; i < highlight.length; i++) {
+      scaleNotes.push(this.getNote(highlight[i]+Number(this.props.options.root)).toUpperCase());
+    }
+    return scaleNotes;
+  }
   render() {
     return <div className="Chords">
-    {this.props.options.scale !== '2' && <div><h4>Chords</h4><ul>{this.getChords()}</ul></div>}
+    <strong>Scale Notes</strong><br/>
+    {this.getScaleNotes().join(', ')}
+    {this.props.options.scale !== '2' && <div><strong>Chords</strong>{this.getChords()}</div>}
     </div>;
   }
 }
